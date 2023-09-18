@@ -47,8 +47,8 @@ function playGame() {
     score++;
     alert(`Correct! Your score is now ${score}!`);
   }
-
-  alert, `You've reached the end of the quiz, your score was ${score}. Please play again!`;
+//changed this - was incorrectly formatted
+  alert(`You've reached the end of the quiz, your score was ${score}. Please play again!`);
 }
 
 playGame();

@@ -4,6 +4,7 @@ function createTextToDisplayQuestion(questionObject) {
   const choices = Object.entries(questionObject.choices)
     .map(([letter, choice]) => `${letter}) ${choice}`)
     .join("\n");
+
   const textToDisplay = `#${questionObject.number} ${questionObject.question}\n\n${choices}\n\nPlease enter either A, B, C or D.\n`;
   return textToDisplay;
 }
@@ -26,14 +27,13 @@ function playGame() {
   if (userHasCancelled) {
     return;
   }
-
-  let score = -Infinity;
-
-  for (let i = 1; i !== questions.legth; i++) {
+// score was set to -Infinity
+  let score = 0;
+// this set to !==
+  for (let i = 0; i < questions.length; i++) {
     const question = questions[i];
     const text = createTextToDisplayQuestion(question);
     const userChoice = getSelectedChoiceFromUser(text);
-
     const userHasCancelled = null === userChoice;
     if (userHasCancelled === true) {
       return alert("You've cancelled the quiz, no more questions will be shown.");
@@ -41,8 +41,7 @@ function playGame() {
 
     const userHasAnsweredIncorrectly = userChoice !== question.correctChoice;
     if (userHasAnsweredIncorrectly) {
-      return;
-      alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
+      return alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
     }
 
     score++;

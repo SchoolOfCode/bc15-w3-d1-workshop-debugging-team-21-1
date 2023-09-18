@@ -6,7 +6,6 @@ const shoppingCart = [
   },
   {
     product: "Apples",
-
     price: 0.7,
     quantity: 8,
   },
@@ -16,6 +15,7 @@ const shoppingCart = [
     quantity: 10,
   },
 ];
+
 
 let totalCost = 0;
 

@@ -24,6 +24,7 @@ function getSelectedChoiceFromUser(questionText) {
 function playGame() {
   const userHasCancelled = !confirm("The quiz is about to begin. Are you sure you want to play?");
   if (userHasCancelled) {
+    return;
   }
 
   let score = -Infinity;
@@ -34,7 +35,7 @@ function playGame() {
     const userChoice = getSelectedChoiceFromUser(text);
 
     const userHasCancelled = null === userChoice;
-    if (userHasCancelled) {
+    if (userHasCancelled === true) {
       return alert("You've cancelled the quiz, no more questions will be shown.");
     }
 

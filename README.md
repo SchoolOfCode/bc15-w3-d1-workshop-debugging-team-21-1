@@ -145,7 +145,7 @@ The algorithm for the quiz application should be:
 
 Users have reported several bugs in the quiz app:
 
-1. Quiz proceeds after users decline to play.
+1. Quiz proceeds after users decline to play. Done
 2. Incorrect score tracking - scores are too low.
 3. Crashes after 10 questions are asked.
 
